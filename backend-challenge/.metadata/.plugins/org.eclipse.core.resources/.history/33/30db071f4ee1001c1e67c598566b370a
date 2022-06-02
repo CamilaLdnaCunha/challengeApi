@@ -1,0 +1,12 @@
+package com.challenge.passValidate.controller;
+
+@RestController
+@RequestMapping("/challenge")
+public class PassValidateController {
+
+    @GetMapping("/{pass}")
+    public validaPass(@PathVariable(value = "id") Long id ) {
+        Spents spents = service.getId(id);
+        return ResponseEntity.ok(spents);
+    }
+}

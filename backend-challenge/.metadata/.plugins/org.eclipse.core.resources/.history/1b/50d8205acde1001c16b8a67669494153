@@ -1,0 +1,40 @@
+package com.challenge.passValidate.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.challenge.passValidate.model.ReturnValidate;
+import com.challenge.passValidate.service.PassValidateService;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class PassValidateServiceImpl implements PassValidateService {
+
+	@Override
+    public ReturnValidate passValidate(String pass) {
+    	boolean validate = true;
+    	
+    	char letras[] = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+    	String caracter[] = {"!","@","#","$","%","^","&","*","(",")","-","+"};
+    	
+    	if (pass.length() >= 9) {
+    	   for (int i = 0; i <= pass.length(); i++ ) {
+    	      if (pass.charAt(i) == ' ') {
+    	            validate = false;	
+    	      } else {
+    	        for (int M = 0; M <= letras.length; M++) {
+    	        	 if (letras == pass.charAt(i) ) {
+    	        		 
+    	        	 }
+    	           
+    	         }
+    	      }      	
+    	   }
+        } else {
+    	   validate = false;
+    	}
+    	
+        return null ;
+    }
+}

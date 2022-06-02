@@ -1,0 +1,80 @@
+package com.challenge.passValidate.impl;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.springframework.stereotype.Service;
+
+import com.challenge.passValidate.model.ReturnValidate;
+import com.challenge.passValidate.service.PassValidateService;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class PassValidateServiceImpl implements PassValidateService {
+
+	@Override
+	public ReturnValidate passValidate(String pass) {
+		boolean retValidate = true;
+		
+		retValidate = validCharacterTypes(pass);
+
+		if (retValidate) {
+			retValidate = validCharacterQtde(pass);
+		}
+		
+		ReturnValidate ret = new ReturnValidate();
+		ret.setValidate(retValidate);
+		
+		return ret;
+	}
+	
+	public static boolean validCharacterTypes(String pass) {
+		boolean returnValidate = true;
+
+		String regex = "^(?=.*[0-9])"
+					   + "(?=.*[a-z])(?=.*[A-Z])"
+				       + "(?=.*[!@#$%^&*()-+])" 
+					   + "(?=\\S+$).{9,}$";
+
+		Pattern p = Pattern.compile(regex);
+
+		// verifica se o valor é nulo
+		if (pass == null) {
+			returnValidate = false;
+		}
+
+		// executa a verificação
+		Matcher m = p.matcher(pass);
+
+		returnValidate = m.matches();
+
+		return returnValidate;
+	}
+	
+	public static boolean validCharacterQtde(String pass) {
+		boolean returnValidate = true;
+		int repeatedCharQtde = 0;
+		// verifica letras repetidas
+		String repeatedChar[] = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q",
+				"R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "!", "@",
+				"#", "$", "%", "^", "&", "*", "(", ")", "-", "+" };
+
+		for (int l = 0; l <= repeatedChar.length; l++) {
+			repeatedCharQtde = 0;
+			// Letras Maiusculas
+			for (int i = 0; i <= pass.charAt(i); i++) {
+			   System.out.println(pass.charAt(i));	
+			   if (repeatedCharQtde <= 1) {
+				  if (repeatedChar[i] == pass.toString().toUpperCase()) {
+					 repeatedCharQtde++;
+				  }
+				} else {
+					returnValidate = false;
+				}
+			}
+		}
+		return returnValidate;
+	}
+}

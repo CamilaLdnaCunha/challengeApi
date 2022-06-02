@@ -1,0 +1,25 @@
+package com.challenge.passValidate.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.challenge.passValidate.model.ReturnValidate;
+import com.challenge.passValidate.service.PassValidateService;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class PassValidateServiceImpl implements PassValidateService {
+	
+    @Override
+    public ReturnValidate passValidate(String pass) {
+    	String minuscul[] = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+    	String maiusculo[] = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+    	
+    	String caracter[] = {"!","@","#","$","%","^","&","*","(",")","-","+"};
+    	if (pass.length() >= 9) {
+    		
+    	}
+        return null ;
+    }
+}

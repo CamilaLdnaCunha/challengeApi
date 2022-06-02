@@ -1,0 +1,5 @@
+package com.challenge.passValidate.controller;
+
+public class PassValidateController {
+
+}

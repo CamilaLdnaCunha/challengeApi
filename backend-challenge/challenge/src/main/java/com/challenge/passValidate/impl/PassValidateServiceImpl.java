@@ -1,6 +1,5 @@
 package com.challenge.passValidate.impl;
 
-import java.text.Normalizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,7 +15,7 @@ import lombok.AllArgsConstructor;
 public class PassValidateServiceImpl implements PassValidateService {
 
 	@Override
-	public ReturnValidate passValidate(String pass) {
+	public  ReturnValidate passValidate(String pass) {
 		boolean retValidate = true;
 
 		retValidate = validCharacterTypes(pass);
@@ -56,7 +55,7 @@ public class PassValidateServiceImpl implements PassValidateService {
 			} 			
 		}
 
-		return returnValidate;
+		return  returnValidate;
 	}
 
 	public static boolean validCharacterQtde(String pass) throws ExceptionInInitializerError {

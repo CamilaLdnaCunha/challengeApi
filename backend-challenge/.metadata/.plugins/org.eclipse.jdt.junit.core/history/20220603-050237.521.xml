@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="challenge" project="challenge" tests="8" started="8" failures="0" errors="0" ignored="0">
+  <testsuite name="com.challenge.passValidate.impl.PassValidateServiceImplTest" time="0.006" displayname="PassValidateServiceImplTest" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.impl.PassValidateServiceImplTest]">
+    <testcase name="passValidateTest2" classname="com.challenge.passValidate.impl.PassValidateServiceImplTest" time="0.002" displayname="passValidateTest2()" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.impl.PassValidateServiceImplTest]/[method:passValidateTest2()]"/>
+    <testcase name="passValidateTest" classname="com.challenge.passValidate.impl.PassValidateServiceImplTest" time="0.003" displayname="passValidateTest()" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.impl.PassValidateServiceImplTest]/[method:passValidateTest()]"/>
+  </testsuite>
+  <testsuite name="com.challenge.passValidate.ChallengeApplicationTests" time="0.003" displayname="ChallengeApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.ChallengeApplicationTests]">
+    <testcase name="contextLoads" classname="com.challenge.passValidate.ChallengeApplicationTests" time="0.003" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.ChallengeApplicationTests]/[method:contextLoads()]"/>
+  </testsuite>
+  <testsuite name="com.challenge.passValidate.controller.PassValidateControllerTest" time="0.014" displayname="PassValidateControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.controller.PassValidateControllerTest]">
+    <testcase name="valisPassTest" classname="com.challenge.passValidate.controller.PassValidateControllerTest" time="0.013" displayname="valisPassTest()" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.controller.PassValidateControllerTest]/[method:valisPassTest()]"/>
+    <testcase name="invalidPassTest" classname="com.challenge.passValidate.controller.PassValidateControllerTest" time="0.0" displayname="invalidPassTest()" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.controller.PassValidateControllerTest]/[method:invalidPassTest()]"/>
+  </testsuite>
+  <testsuite name="com.challenge.passValidate.controller.PassValidateHttpTest" time="0.068" displayname="PassValidateHttpTest" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.controller.PassValidateHttpTest]">
+    <testcase name="OkPassText" classname="com.challenge.passValidate.controller.PassValidateHttpTest" time="0.059" displayname="OkPassText()" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.controller.PassValidateHttpTest]/[method:OkPassText()]"/>
+    <testcase name="badPassText" classname="com.challenge.passValidate.controller.PassValidateHttpTest" time="0.008" displayname="badPassText()" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.controller.PassValidateHttpTest]/[method:badPassText()]"/>
+  </testsuite>
+  <testsuite name="com.challenge.passValidate.model.ReturnValidateTest" time="0.046" displayname="ReturnValidateTest" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.model.ReturnValidateTest]">
+    <testcase name="testThis" classname="com.challenge.passValidate.model.ReturnValidateTest" time="0.046" displayname="testThis()" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.model.ReturnValidateTest]/[method:testThis()]"/>
+  </testsuite>
+</testrun>

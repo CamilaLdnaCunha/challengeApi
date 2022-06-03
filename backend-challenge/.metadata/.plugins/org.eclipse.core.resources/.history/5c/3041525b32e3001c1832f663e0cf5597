@@ -1,0 +1,24 @@
+package com.challenge.passValidate.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+public class ReturnValidate  {
+	
+	private String validate;
+
+	public String isValidate() {
+		return validate;
+	}
+
+	public void setValidate(String validate) {
+		this.validate = validate;
+	}
+
+}

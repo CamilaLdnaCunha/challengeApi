@@ -10,7 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class ReturnValidate  {
-	private boolean validate;
+	
+	private boolean  validate;
 
 	public boolean isValidate() {
 		return validate;

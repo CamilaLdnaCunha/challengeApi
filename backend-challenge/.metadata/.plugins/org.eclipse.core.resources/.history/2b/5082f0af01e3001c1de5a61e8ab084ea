@@ -1,0 +1,23 @@
+package com.challenge.passValidate.model;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+public class ReturnValidateTest {
+	
+	ReturnValidate ret;
+	
+	@BeforeAll
+    public void setTest() {
+		ReturnValidate ret = new ReturnValidate();
+		ret.setValidate("true");
+    }
+
+@Test
+    public void testThis() {
+        assertThat(ret.isValidate()).isEqualTo("true");
+        assertThat(ret.isValidate()).isNotEmpty();
+    }
+}

@@ -1,0 +1,49 @@
+package com.challenge.passValidate.controller;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.content;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.web.servlet.MockMvc;
+
+import com.challenge.passValidate.model.ReturnValidate;
+import com.challenge.passValidate.service.PassValidateService;
+
+@WebMvcTest
+public class PassValidateControllerController {
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    private PassValidateService passValidateService;
+    
+    @Test
+    void shouldGetDefaultWelcomeMessage() throws Exception {
+    	 ReturnValidate returnValidate = new ReturnValidate(); 
+    	 returnValidate.setValidate("false");
+        when(passValidateService.passValidate("AbTp9!foo")).thenReturn(returnValidate);
+        mockMvc.perform(get("/challenge"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                
+        verify(passValidateService).passValidate(null)
+    }
+
+    @Test
+    void shouldGetCustomWelcomeMessage() throws Exception {
+        when(welcomeService.getWelcomeMessage("John")).thenReturn("Welcome John!");
+        mockMvc.perform(get("/welcome?name=John"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string(equalTo("Welcome John!")));
+        verify(welcomeService).getWelcomeMessage("John");
+    }
+}

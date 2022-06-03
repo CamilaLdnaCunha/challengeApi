@@ -1,0 +1,19 @@
+package com.challenge.passValidate.model;
+
+public class ReturnValidateTest {
+	@Before
+    public void setTest() {
+        inventoryTable = new InventoryTable("12345", "TypeMoTo", "Machina");
+        inventoryTable.setTerminalId("12345");
+        inventoryTable.setMachineType("TypeMoTo");
+        inventoryTable.setMachineName("Machina");
+    }
+
+@Test
+    public void testThis() {
+        assertThat(inventoryTable.getTerminalId()).isEqualTo("12345");
+        assertThat(inventoryTable.getMachineType()).isEqualTo("TypeMoTo");
+        assertThat(inventoryTable.getMachineName()).isEqualTo("Machina");
+
+    }
+}

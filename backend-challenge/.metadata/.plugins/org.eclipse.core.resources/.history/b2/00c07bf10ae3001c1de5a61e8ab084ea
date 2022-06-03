@@ -1,0 +1,37 @@
+package com.challenge.passValidate.impl;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mockito;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import com.challenge.passValidate.model.ReturnValidate;
+import com.challenge.passValidate.service.PassValidateService;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(controllers = PassValidateServiceImpl.class)
+public class PassValidateServiceImplTest {
+    
+	 PassValidateService passValidateService = Mockito.mock(PassValidateService.class);
+	   
+	   @Test
+	   public void passValidateTest(String pass) {
+			boolean retValidate = true;
+           
+			PassValidateServiceImpl.
+			retValidate = passValidate(pass);
+
+			if (retValidate) {
+				retValidate = validCharacterQtde(pass);
+			}
+
+			ReturnValidate ret = new ReturnValidate();
+			ret.setValidate(String.valueOf(retValidate));
+
+			return ret;
+		}
+	
+}

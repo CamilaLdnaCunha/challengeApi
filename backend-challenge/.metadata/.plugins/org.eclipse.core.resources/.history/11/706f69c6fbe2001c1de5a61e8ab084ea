@@ -1,0 +1,57 @@
+package com.challenge.passValidate.controller;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.content;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultMatcher;
+
+import com.challenge.passValidate.model.ReturnValidate;
+import com.challenge.passValidate.service.PassValidateService;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(controllers = PassValidateController.class)
+public class PassValidateControllerTest {
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    private PassValidateService passValidateService;
+    
+    @Test
+    void falsePassText() throws Exception {
+    	 ReturnValidate returnValidate = new ReturnValidate(); 
+    	 returnValidate.setValidate("false");
+
+    //	 when(passValidateService.passValidate("AbTp9!foo")).thenReturn(returnValidate);
+                mockMvc.perform(get("http://localhost:8080/challenge/{pass}", "AbTp9!foo")
+        	    .contentType("application/json")
+        	    .param("pass", "true") )
+        	    .andExpect(status().isOk());
+       //  verify(passValidateService).passValidate("false");
+    }
+
+    @Test
+    void truePassText() throws Exception {
+   	 	 ReturnValidate returnValidate = new ReturnValidate(); 
+   	 	 returnValidate.setValidate("true");
+
+   	 	 when(passValidateService.passValidate("AbTp9!foo")).thenReturn(returnValidate);
+               mockMvc.perform(get("http://localhost:8080/challenge/{pass}", "AbTp9!fok")
+       	        .contentType("application/json")
+       	        .param("pass", "true") )
+       	        .andExpect(status().isOk());
+         verify(passValidateService).passValidate("true");
+    }
+}

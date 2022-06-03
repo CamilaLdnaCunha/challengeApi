@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun PassValidateControllerTest" project="challenge" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.challenge.passValidate.controller.PassValidateControllerTest" time="0.01" displayname="PassValidateControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.controller.PassValidateControllerTest]">
+    <testcase name="OkPassText" classname="com.challenge.passValidate.controller.PassValidateControllerTest" time="0.0" displayname="OkPassText()" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.controller.PassValidateControllerTest]/[method:OkPassText()]"/>
+    <testcase name="badPassText" classname="com.challenge.passValidate.controller.PassValidateControllerTest" time="0.01" displayname="badPassText()" uniqueid="[engine:junit-jupiter]/[class:com.challenge.passValidate.controller.PassValidateControllerTest]/[method:badPassText()]"/>
+  </testsuite>
+</testrun>
